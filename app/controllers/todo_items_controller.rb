@@ -5,6 +5,7 @@ class TodoItemsController < ApplicationController
   # GET /todo_items.json
   def index
     @todo_items = TodoItem.all
+    @number_of_completed_todos = TodoItem.where(completed:true).count
   end
 
   # GET /todo_items/1
@@ -15,6 +16,7 @@ class TodoItemsController < ApplicationController
   # GET /todo_items/new
   def new
     @todo_item = TodoItem.new
+
   end
 
   # GET /todo_items/1/edit
